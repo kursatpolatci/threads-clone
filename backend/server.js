@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser"
 import connectDB from "./db/connectDB.js"
 
 import userRoutes from "./routes/user.route.js"
+import postRoutes from "./routes/post.route.js"
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
 
 app.use("/api/users", userRoutes)
+app.use("/api/posts", postRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server started at http://localhost:${PORT}`)
